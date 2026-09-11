@@ -501,7 +501,7 @@ Both the Workload Identity Token and the Workload Identity Certificate carry a p
 
 An attacker observing or intercepting the communication channel can view the Workload Identity Token and its PoP and attempt to replay them to gain an advantage. To prevent this, the WIT and its PoP MUST be sent over a secure, server-authenticated TLS connection unless a secure channel is provided by some other mechanism.
 
-In some deployments the Workload Identity Token and PoP may pass through multiple systems. Communication between systems is over TLS, but the token and PoP are available in the clear at each intermediary.  While an intermediary cannot modify the token or the information within the PoP, it can attempt to capture and replay the token or modify data not protected by the PoP. Mitigations listed in {{wit-pop}} can reduce this risk. Deployments should analyze their situation to determine whether it is appropriate to trust and allow traffic to pass through a middlebox.
+In some deployments the Workload Identity Token and PoP may pass through multiple systems. Communication between systems is over TLS, but the token and PoP are available in plaintext at each intermediary.  While an intermediary cannot modify the token or the information within the PoP, it can attempt to capture and replay the token or modify data not protected by the PoP. Mitigations listed in {{wit-pop}} can reduce this risk. Deployments should analyze their situation to determine whether it is appropriate to trust and allow traffic to pass through a middlebox.
 
 # Privacy Considerations
 
